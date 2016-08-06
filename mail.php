@@ -23,7 +23,7 @@ $headers = 'From: webmaster@scriptingaway.com' . "\r\n" .
 // Send
 if($email != ""){
 	if(mail('lsaruwatari@gmail.com', 'Scriptingaway Form', $message, $headers))$response = "Message sent successfully";
-	else $response = "Message failed. Please send email directly to lsaruwatari@gmail";
+	else $response = "Message failed. Please send email directly to lsaruwatari@gmail.com";
 }
 
 else $response = "Email required!";
