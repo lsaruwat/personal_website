@@ -45,9 +45,15 @@ $logfile= 'visitors.log';
 $logdetails= date("F j, Y, g:i a") . ': IP Env: ' . $IP . 'IP Server: ' . $IP2 . '\n';
 
 // open the file for reading and writing
-$fp = fopen($logfile, "r+");
+$file = fopen($logfile, "r+");
 // write out new log entry to the beginning of the file
-fwrite($fp, $logdetails, strlen($logdetails));
+
+$current = file_get_contents($file);
+// Append a new person to the file
+$current .= $logdetails;
+// Write the contents back to the file
+file_put_contents($file, $current);
+
 fclose($fp);
 ?>
 <!DOCTYPE html>
