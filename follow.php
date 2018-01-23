@@ -39,10 +39,11 @@ function get_client_ip_server() {
  
     return $ipaddress;
 }
-
+$ip = get_client_ip_env();
+$ip2 = get_client_ip_server();
 
 $logfile= 'visitors.log';
-$logdetails= date("F j, Y, g:i a") . ': IP Env: ' . $IP . 'IP Server: ' . $IP2 . '\n';
+$logdetails= date("F j, Y, g:i a") . ': IP Env: ' . $ip . 'IP Server: ' . $ip2 . '\n';
 
 // open the file for reading and writing
 $file = fopen($logfile, "r+");
@@ -80,7 +81,7 @@ $myfile = file_put_contents('visitors.log', $current.PHP_EOL , FILE_APPEND | LOC
   <link rel="stylesheet" type="text/css" href="assets/extras/owl/owl.carousel.css">
   <link rel="stylesheet" type="text/css" href="assets/extras/owl/owl.theme.css">
   <link rel="stylesheet" type="text/css" href="assets/extras/owl/owl.transitions.css">
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->logan
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
                 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
                 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
