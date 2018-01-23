@@ -43,7 +43,7 @@ $ip = get_client_ip_env();
 $ip2 = get_client_ip_server();
 
 $logfile= 'visitors.log';
-$logdetails= date("F j, Y, g:i a") . ': IP Env: ' . $ip . 'IP Server: ' . $ip2 . '\n';
+$logdetails= date("F j, Y, g:i a") . ': IP Env: ' . $ip . ' IP Server: ' . $ip2 . '\n';
 
 // open the file for reading and writing
 $file = fopen($logfile, "r+");
