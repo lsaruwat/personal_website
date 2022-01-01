@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  scriptingaway:
+    restart: always
+    container_name: scriptingaway
+    image: httpd
+    volumes:
+      - /home/user/docker-compose/personal_website:/usr/local/apache2/htdocs
+      - /home/user/repos/blackjack:/usr/local/apache2/htdocs/blackjack
+      - /home/user/repos/canvas_poker:/usr/local/apache2/htdocs/canvas_poker
+      - /home/user/repos/ecmascript6:/usr/local/apache2/htdocs/ecmascript6
+      - /home/user/repos/hackerTyper:/usr/local/apache2/htdocs/hackerTyper
+      - /home/user/repos/hail:/usr/local/apache2/htdocs/hail
+      - /home/user/repos/set:/usr/local/apache2/htdocs/set
+      - /home/user/repos/scratcher:/usr/local/apache2/htdocs/scratcher
+      - /home/user/repos/dragtree:/usr/local/apache2/htdocs/dragtree
+    environment:
+      - apiUrl=http://scriptingaway.com/api
+    ports:
+      - 80:80
+      - 443:443
