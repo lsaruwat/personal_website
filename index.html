@@ -38,13 +38,11 @@
 
 
   function main(){
-    console.log($("#contact_form"));
     $("#contact_form").submit(function(event){
       event.preventDefault();
       var formData = $("#contact_form").serialize();
-      console.log(formData);
       $.ajax({
-        url : "mail.php",
+        url : "vitel_sms.php",
         dataType : 'json',
         type : 'POST',
         data : formData,
@@ -52,14 +50,13 @@
         success : function (data) {
             $("#response_text").attr("style", "display: inline-block;");
             $("#response_text").html(data.response);
-            console.log(data);
-
         },
 
         error : function (xhr, status, errorThrown) {
           console.log('@Error: ' + errorThrown);
           console.log('@Status: ' + status);
           console.log('@Status Text: ' + xhr.statusText);
+	  $("#response_text").html('Fatal Error: ' + status);
         }
       });
     });
