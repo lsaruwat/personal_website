@@ -725,3 +725,7 @@ ul.social-icon.resources{
   background-image: none;
   color: #333;
 }
+
+.container.projects .row.link{
+  padding: 0px;
+}
